@@ -20,7 +20,9 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       let id = data.results[i].id;
       let card =
       //id를 일단 html에 저장시키고, 클릭 시 그 id를 alert 시키고싶음.
-      `<div class="cards">
+      `
+      <li onclick ="alert('${id}')">
+      <div class="cards">
       <div class="row g-1">
       <div class="col-md-6">
       <img src = "${image}" class="img-fluid rounded-start" alt="...">
@@ -30,6 +32,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       <h5 class="cardtitle">${title}</h5>
       <p class="cardtext">${overview}</p>
       <small class="cardmemo">출시날짜 : ${date} 점수 : ${average}/10</small>
+      </li>
   </div>
   </div>
   </div>
@@ -42,7 +45,3 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
   .catch(err => console.error(err));
   }
   //여기까지가 api 정보 삽입//
-
-function cardclick (){
-
-}
